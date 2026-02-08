@@ -1,0 +1,169 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Kyungseo Park
+  given: Kyungseo
+  family: Park
+  alternate: '박경서'
+  pronunciation: ''
+  pronouns: he/him
+postnominals: []
+status:
+  icon: "🤖"
+role: Undergraduate Researcher
+bio: |
+  Undergraduate student in Mechanical Engineering and Electrical & Computer
+  Engineering at Seoul National University, focusing on Robotics, Control and
+  Machine Learning. Research intern at the Robotics Lab and crew member of Rosota.
+
+affiliations:
+  - name: Seoul National University
+    url: https://www.snu.ac.kr/
+
+links:
+  - icon: at-symbol
+    url: mailto:erickun0125@snu.ac.kr
+    label: E-mail Me
+  - icon: brands/github
+    url: https://github.com/erickun0125
+
+interests:
+  - Learning-based Robot Control
+  - Physical Intelligence
+  - Humanoid Whole-Body Control
+  - Manipulation & Assembly
+  - Sim-to-Real Transfer
+
+education:
+  - degree: B.Sc. Mechanical Engineering
+    institution: Seoul National University
+    start: 2020-03-01
+    summary: |
+      GPA: 4.14/4.3 (138 credits completed). Double major in Electrical and Computer Engineering.
+  - degree: B.Sc. Electrical and Computer Engineering (Double Major)
+    institution: Seoul National University
+    start: 2021-09-01
+
+experience:
+  - role: Research Project
+    org: Robotics Lab, SNU (Prof. Frank C. Park)
+    start: 2025-12-01
+    summary: |
+      Manipulation of Articulated Objects by Geometric Impedance Control with Constraint Distillation from Generated Trajectory Ensemble.
+  - role: Bachelor's Thesis Project
+    org: Robotics Lab, SNU (Prof. Frank C. Park)
+    start: 2025-07-01
+    end: 2025-12-01
+    summary: |
+      Screw-Wrench Informed Impedance Variable Learning for Bimanual Manipulation of an Articulated Object.
+  - role: HMG Research Project
+    org: Robotics Lab, SNU (Prof. Frank C. Park)
+    start: 2025-03-01
+    end: 2025-10-01
+    summary: |
+      Developing SE(3) Adaptive Compliance Policy for Manipulation.
+  - role: Bachelor's Thesis Project
+    org: CORE Lab, SNU (Prof. Insoon Yang)
+    start: 2025-01-01
+    end: 2025-06-01
+    summary: |
+      Integrating VLM-based Reward in Model-based Reinforcement Learning.
+  - role: AI Robot Dynamics Engineer Intern
+    org: Sequor Robotics
+    start: 2025-06-01
+    end: 2025-10-01
+    summary: |
+      Developing RL policy & Sim2Real pipeline for quadruped and humanoid robots.
+  - role: Undergraduate Research Intern
+    org: RAI Lab, KAIST (Prof. Jemin Hwangbo)
+    start: 2024-06-01
+    end: 2024-08-01
+    summary: |
+      Robust Recovery Controller for Raibo2 Quadruped Robot.
+  - role: AI Engineer Member
+    org: Rosota
+    start: 2025-03-01
+    summary: |
+      Research on autonomous surgical assistant robots and medical procedure assistance robots.
+  - role: Student Volunteer
+    org: CoRL 2025
+    start: 2025-09-01
+    end: 2025-09-01
+    summary: |
+      Selected as student volunteer for the Conference on Robot Learning.
+  - role: Technical Leader
+    org: Aegis AI (K-Startup Challenge)
+    start: 2023-01-01
+    end: 2023-12-01
+    summary: |
+      Development of detection program of AI-generated images. Won multiple national awards.
+
+skills:
+  - name: Programming
+    items:
+      - label: Python
+        level: 5
+      - label: C/C++
+        level: 4
+      - label: MATLAB
+        level: 3
+  - name: Robotics & AI
+    items:
+      - label: PyTorch
+        level: 5
+      - label: Isaac Sim/Lab
+        level: 4
+      - label: ROS2
+        level: 4
+      - label: LeRobot
+        level: 3
+      - label: Raisim
+        level: 3
+  - name: Robot Platforms
+    items:
+      - label: Unitree G1/Go2
+        level: 4
+      - label: Franka FR3
+        level: 4
+      - label: Agilex Piper
+        level: 3
+      - label: Fairino FR5
+        level: 3
+      - label: Raibo2
+        level: 3
+
+languages:
+  - name: Korean
+    level: 5
+    label: Native
+  - name: English
+    level: 4
+    label: Fluent
+
+awards:
+  - title: Imgwang Scholarship
+    awarder: Seoul National University
+    date: "2021-03-01"
+    summary: Full-tuition merit scholarship (2021–present).
+    icon: hero/academic-cap
+  - title: Minister of Startup & Entrepreneurship Award
+    awarder: K-Startup Challenge
+    date: "2023-12-01"
+    summary: National award for AI-generated image detection startup.
+    icon: hero/trophy
+  - title: Grand Award
+    awarder: Ministry of National Defense Startup Competition
+    date: "2023-09-01"
+    summary: Grand prize in national defense startup competition.
+    icon: hero/trophy
+  - title: Best Award
+    awarder: Air Force Startup Competition
+    date: "2023-06-01"
+    summary: Best award in Air Force startup competition.
+    icon: hero/trophy
+  - title: Best Award
+    awarder: Material and Manufacturing Process Contest
+    date: "2024-06-01"
+    summary: Best award in material and manufacturing process design.
+    icon: hero/trophy
