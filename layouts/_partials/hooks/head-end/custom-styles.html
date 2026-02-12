@@ -274,6 +274,29 @@
   }
 
   /* ══════════════════════════════════════════════
+     Article / Project pages - wider content
+     ══════════════════════════════════════════════ */
+
+  /* Override ALL Tailwind width constraints on single pages */
+  [class*="max-w-prose"],
+  [class*="prose"],
+  .prose,
+  .prose.prose-slate,
+  .prose.prose-slate.lg\:prose-xl {
+    max-width: none !important;
+  }
+
+  /* Override Tailwind max-w-6xl on article main (1152px → 960px match page-body) */
+  [class*="max-w-6xl"] {
+    max-width: 960px !important;
+  }
+
+  /* Hide TOC sidebar to reclaim full width */
+  [class*="hb-toc"] {
+    display: none !important;
+  }
+
+  /* ══════════════════════════════════════════════
      Responsive
      ══════════════════════════════════════════════ */
 
