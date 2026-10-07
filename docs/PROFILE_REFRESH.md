@@ -13,6 +13,7 @@
 - CV는 기존 LaTeX editor에서 검증한 최신 2페이지 PDF를 두 기존 다운로드 URL에 동일하게 제공한다. Selected Projects·Technical Skills·Research interests 제목·상단 중복 소속은 제거했다.
 - 사용하지 않는 새 미디어 12개는 repository 밖 `media-originals/2026-10-08-release-unused/`에 보관했다. 공개 파일에는 현재 사용하는 crop·압축본을 포함한다.
 - 공개 배포는 `main` push에 연결된 `.github/workflows/deploy.yml`을 사용한다. Production build는 초안 페이지를 포함하지 않는다.
+- CI에서는 `hugo mod graph`로 `go.mod`에 고정한 테마를 가져온다. 기존 `hugo mod get`은 배포 중 테마를 최신 버전으로 올려 Hugo 0.154.5와 호환되지 않는 템플릿을 가져오는 문제가 있어 교체했다.
 
 ## 소개 방향
 

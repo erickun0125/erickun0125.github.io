@@ -52,8 +52,8 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install
 
-      - name: Download Hugo modules
-        run: hugo mod get
+      - name: Download pinned Hugo modules
+        run: hugo mod graph
 
       - name: Build with Hugo
         env:

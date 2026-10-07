@@ -19,7 +19,7 @@ pnpm build
 pnpm run pagefind
 ```
 
-CI (`deploy.yml`) uses Hugo 0.154.5 extended, Go 1.22, Node.js 20. Note: CI installs deps with `npm install` (not pnpm), so both lockfiles should stay compatible.
+CI (`deploy.yml`) uses Hugo 0.154.5 extended, Go 1.22, Node.js 20. It downloads the module versions pinned in `go.mod` with `hugo mod graph`; do not use `hugo mod get` during deployment, because it upgrades the theme. CI installs deps with `npm install` (not pnpm), so both lockfiles should stay compatible.
 
 ## Architecture
 
