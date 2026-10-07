@@ -1,11 +1,19 @@
-# Navigation Links
 main:
   - name: About
-    url: /
+    url: /#about
     weight: 10
-  - name: Projects
-    url: projects/
+  - name: Education
+    url: /#education
     weight: 20
-  - name: CV
-    url: uploads/CV_KyungseoPark.pdf
+  - name: Publications
+    url: /#research
+    weight: 30
+  - name: Experience
+    url: /#experience
     weight: 40
+  - name: Projects
+    url: /#projects
+    weight: 50
+  - name: CV
+    url: /uploads/cv_kyungseopark.pdf
+    weight: 60

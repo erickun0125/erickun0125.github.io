@@ -1,0 +1,51 @@
+{{ $author := .Site.Data.authors.me }}
+<div class="research-profile">
+  <header class="profile-header">
+    <div class="profile-intro">
+      <h1>{{ $author.name.display }}</h1>
+      <div class="profile-links">
+        {{ range $author.links }}<a href="{{ .url }}">{{ .label }}</a>{{ end }}
+        <a href="{{ "/uploads/cv_kyungseopark.pdf" | relURL }}">CV <span class="link-format">PDF</span></a>
+      </div>
+    </div>
+    <div class="profile-bio">
+      <p>{{ $author.bio }}</p>
+      <p>I am an M.S. student in Mechanical Engineering at KAIST, advised by Prof. Jemin Hwangbo in the <a href="{{ $author.current_lab_url }}" target="_blank" rel="noopener noreferrer">RAI Lab</a>. Previously, I was an undergraduate research intern in the <a href="{{ $author.previous_lab_url }}" target="_blank" rel="noopener noreferrer">Robotics Lab</a> at Seoul National University, working with Prof. Frank C. Park.</p>
+    </div>
+    <img class="profile-photo" src="{{ "/media/authors/me.png" | relURL }}" alt="Kyungseo Park" width="152" height="190" fetchpriority="high">
+  </header>
+  <section id="education" class="profile-section" aria-labelledby="education-heading">
+    <div class="section-heading"><h2 id="education-heading">Education</h2></div>
+    {{ range $author.education }}
+    <div class="education-entry">
+      <div><h3>{{ .institution }}</h3><p>{{ .degree }}</p><p class="education-note">{{ if .lab_url }}<a href="{{ .lab_url }}" target="_blank" rel="noopener noreferrer">{{ .lab }}</a> · Advisor: {{ .advisor }}{{ else }}{{ .summary }}{{ end }}</p></div>
+      <span class="education-period">{{ .period }}</span>
+    </div>
+    {{ end }}
+  </section>
+  <section id="research" class="profile-section" aria-labelledby="research-heading">
+    <div class="section-heading"><h2 id="research-heading">Publications</h2></div>
+    {{ range .Site.Data.publications }}{{ partial "publication-card.html" . }}{{ end }}
+  </section>
+  <section id="experience" class="profile-section" aria-labelledby="experience-heading">
+    <div class="section-heading"><h2 id="experience-heading">Research & Engineering Experience</h2></div>
+    <div class="experience-grid">
+      {{ range $i, $experience := $author.experience }}
+      <article class="experience-card{{ if eq .media_size "compact" }} experience-card-compact{{ else if eq .media_size "dense" }} experience-card-dense{{ end }}">
+        <div class="experience-copy">
+          <div class="experience-topline"><span class="experience-number">{{ printf "%02d" (add $i 1) }}</span>{{ with .period }}<span class="experience-period">{{ . }}</span>{{ end }}</div>
+          <h3>{{ if .org_url }}<a class="institution-link" href="{{ .org_url }}" target="_blank" rel="noopener noreferrer">{{ .org }} <span aria-hidden="true">↗</span></a>{{ else }}{{ .org }}{{ end }}</h3>
+          <p class="experience-role">{{ .role }}{{ with .advisor }} · {{ . }}{{ end }}</p>
+          {{ with .titles }}<div class="experience-research-titles">{{ range . }}<h4>{{ . }}</h4>{{ end }}</div>{{ else }}<h4>{{ .title }}</h4>{{ end }}
+          {{ with .summary }}<p class="experience-summary">{{ . }}</p>{{ end }}
+        </div>
+        {{ partial "profile-media.html" (dict "items" .media "layout" .media_layout "size" .media_size) }}
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  <section id="projects" class="profile-section" aria-labelledby="projects-heading">
+    <div class="section-heading"><h2 id="projects-heading">Featured Projects</h2><a href="{{ "/projects/" | relURL }}">All projects <span aria-hidden="true">→</span></a></div>
+    {{ partial "project-cards.html" . }}
+  </section>
+</div>

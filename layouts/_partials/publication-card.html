@@ -1,0 +1,19 @@
+<article class="publication-card">
+  <div class="publication-visual">
+    <video autoplay loop controls muted playsinline preload="metadata" poster="{{ .poster | relURL }}" aria-label="Constraint-decomposed impedance control research demonstration">
+      <source src="{{ .teaser | relURL }}" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+  </div>
+  <div class="publication-copy">
+    <h3><a href="{{ .project_url }}">{{ .title }}</a></h3>
+    <p class="publication-authors">{{ range $i, $author := .authors }}{{ if $i }}, {{ end }}{{ if eq $author "Kyungseo Park" }}<strong>{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}</p>
+    <p class="publication-venue">CoRL {{ .year }} <span class="spotlight-badge">{{ .distinction }}</span></p>
+    <div class="resource-links">
+      <a href="{{ .project_url }}">Project page <span aria-hidden="true">↗</span></a>
+      {{ with .paper_url }}<a href="{{ . }}">Paper</a>{{ end }}
+      <a href="{{ .video_url }}">Video <span aria-hidden="true">↗</span></a>
+    </div>
+    <p>{{ .summary }}</p>
+  </div>
+</article>

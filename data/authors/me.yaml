@@ -6,164 +6,142 @@ name:
   given: Kyungseo
   family: Park
   alternate: '박경서'
-  pronunciation: ''
-  pronouns: he/him
-postnominals: []
-status:
-  icon: "🤖"
-role: Undergraduate Researcher
-bio: |
-  Undergraduate student in Mechanical Engineering and Electrical & Computer
-  Engineering at Seoul National University, focusing on Robotics, Control and
-  Machine Learning. Research intern at the Robotics Lab and crew member of Rosota.
-
+role: M.S. Student in Mechanical Engineering, RAI Lab, KAIST
+current_lab_url: https://railab.kaist.ac.kr/index.html
+previous_lab_url: https://sites.google.com/robotics.snu.ac.kr/fcp/home
+bio: >-
+  I am broadly interested in control and planning of dynamic systems, particularly in robotics.
+  My research objective is to enable robots to perform complex behaviors and exhibit physical intelligence through learning.
+  These interests span both manipulation and locomotion in real-world robotics.
 affiliations:
-  - name: Seoul National University
-    url: https://www.snu.ac.kr/
-
+  - name: KAIST
+    url: https://www.kaist.ac.kr/
 links:
   - icon: at-symbol
-    url: mailto:erickun0125@snu.ac.kr
-    label: E-mail Me
+    url: mailto:erickun0125@kaist.ac.kr
+    label: Email
   - icon: brands/github
     url: https://github.com/erickun0125
-
+    label: GitHub
 interests:
-  - Learning-based Robot Control
-  - Physical Intelligence
-  - Humanoid Whole-Body Control
-  - Manipulation & Assembly
-  - Sim-to-Real Transfer
-
+  - Robot Learning
+  - Control and Planning
+  - Real-World Robotics
+  - Manipulation and Locomotion
 education:
-  - degree: B.Sc. Mechanical Engineering
+  - degree: M.S. Student in Mechanical Engineering
+    institution: KAIST
+    lab: RAI Lab
+    lab_url: https://railab.kaist.ac.kr/index.html
+    advisor: Prof. Jemin Hwangbo
+    period: Fall 2026 - Present
+    summary: 'RAI Lab · Advisor: Prof. Jemin Hwangbo'
+  - degree: B.S. in Mechanical Engineering; B.S. in Electrical and Computer Engineering (Double Major)
     institution: Seoul National University
     start: 2020-03-01
-    summary: |
-      GPA: 4.14/4.3 (138 credits completed). Double major in Electrical and Computer Engineering.
-  - degree: B.Sc. Electrical and Computer Engineering (Double Major)
-    institution: Seoul National University
-    start: 2021-09-01
-
+    end: 2026-08-28
+    period: Mar 2020 - Aug 2026
+    summary: 'Summa Cum Laude · Ranked 3rd in the department · GPA: 4.10/4.30'
 experience:
-  - role: Research Project
-    org: Robotics Lab, SNU (Prof. Frank C. Park)
-    start: 2025-12-01
-    summary: |
-      Manipulation of Articulated Objects by Geometric Impedance Control with Constraint Distillation from Generated Trajectory Ensemble.
-  - role: Bachelor's Thesis Project
-    org: Robotics Lab, SNU (Prof. Frank C. Park)
-    start: 2025-07-01
-    end: 2025-12-01
-    summary: |
-      Screw-Wrench Informed Impedance Variable Learning for Bimanual Manipulation of an Articulated Object.
-  - role: HMG Research Project
-    org: Robotics Lab, SNU (Prof. Frank C. Park)
-    start: 2025-03-01
-    end: 2025-10-01
-    summary: |
-      Developing SE(3) Adaptive Compliance Policy for Manipulation.
-  - role: Bachelor's Thesis Project
-    org: CORE Lab, SNU (Prof. Insoon Yang)
-    start: 2025-01-01
-    end: 2025-06-01
-    summary: |
-      Integrating VLM-based Reward in Model-based Reinforcement Learning.
-  - role: AI Robot Dynamics Engineer Intern
-    org: Sequor Robotics
-    start: 2025-06-01
-    end: 2025-10-01
-    summary: |
-      Developing RL policy & Sim2Real pipeline for quadruped and humanoid robots.
-  - role: Undergraduate Research Intern
-    org: RAI Lab, KAIST (Prof. Jemin Hwangbo)
+  # Order follows the requested career narrative.
+  - role: Research Intern
+    org: RAI Lab, KAIST
+    org_url: https://railab.kaist.ac.kr/index.html
+    advisor: Prof. Jemin Hwangbo
     start: 2024-06-01
     end: 2024-08-01
-    summary: |
-      Robust Recovery Controller for Raibo2 Quadruped Robot.
-  - role: AI Engineer Member
+    period: Jun 2024 - Aug 2024
+    title: Robust Recovery Controller for Quadruped Robot
+    summary: Trained a recovery policy for the Raibo2 quadruped via deep RL in RaiSim. A 4-step reward curriculum addressed sparse rewards, while log-barrier rewards penalized violations of motor-aware hard constraints.
+    media_size: compact
+    media:
+      - type: video
+        src: /projects/quadruped-recovery/recovery.mp4
+        poster: /projects/quadruped-recovery/featured.jpg
+        alt: Raibo2 quadruped recovery demonstration
+  - role: Early Crew Member
     org: Rosota
-    start: 2025-03-01
-    summary: |
-      Research on autonomous surgical assistant robots and medical procedure assistance robots.
-  - role: Student Volunteer
-    org: CoRL 2025
-    start: 2025-09-01
-    end: 2025-09-01
-    summary: |
-      Selected as student volunteer for the Conference on Robot Learning.
-  - role: Technical Leader
-    org: Aegis AI (K-Startup Challenge)
-    start: 2023-01-01
-    end: 2023-12-01
-    summary: |
-      Development of detection program of AI-generated images. Won multiple national awards.
-
+    org_url: https://www.rosota.run/
+    period: Mar 2025 - May 2026
+    # Content and media follow slides 26-36 of the supplied presentation.
+    title: RCM-Aware Imitation Learning for Laparoscopic Suturing
+    summary: Developed an imitation learning pipeline for laparoscopic suturing using surgeon demonstrations, instrument sensing, digital twin feasibility checks, and trocar-adaptive diffusion policies.
+    media_size: dense
+    media:
+      - type: video
+        src: /media/rosota/laparoscopic-digital-twin-overview.mp4
+        poster: /media/rosota/laparoscopic-digital-twin-overview-poster.jpg
+        alt: Digital twin with synchronized instrument camera and sensing plots
+        caption: Digital twin
+      - type: video
+        src: /media/rosota/laparoscopic-instrument-sensing-focused.mp4
+        poster: /media/rosota/laparoscopic-instrument-sensing-focused-poster.jpg
+        alt: Laparoscopic instrument sensing synchronized with the digital twin
+        caption: Instrument sensing
+  - role: AI & Robotics Engineer Intern
+    org: Sequor Robotics
+    org_url: https://www.sequorrobotics.com/home-en
+    start: 2025-06-01
+    end: 2025-10-01
+    period: Jun 2025 - Oct 2025
+    title: Sim2Real Pipeline for Quadruped & Humanoid Robots
+    summary: Built sim-to-real pipelines for deploying reinforcement learning policies trained in simulation on Unitree Go2 quadruped and G1 humanoid robots.
+    media_size: dense
+    media:
+      - type: video
+        src: /media/sequor/recovery-simulation.mp4
+        poster: /media/sequor/recovery-simulation-poster.jpg
+        alt: Quadruped recovery in simulation
+        caption: Recovery · Simulation
+      - type: video
+        src: /media/sequor/recovery-real.mp4
+        poster: /media/sequor/recovery-real-poster.jpg
+        alt: Quadruped recovery on real hardware
+        caption: Recovery · Real robot
+      - type: video
+        src: /media/sequor/locomotion-simulation.mp4
+        poster: /media/sequor/locomotion-simulation-poster.jpg
+        alt: Quadruped locomotion in simulation
+        caption: Locomotion · Simulation
+      - type: video
+        src: /media/sequor/locomotion-real.mp4
+        poster: /media/sequor/locomotion-real-poster.jpg
+        alt: Learned locomotion on real hardware
+        caption: Locomotion · Real robot
+  - role: Research Intern
+    org: Robotics Lab, Seoul National University
+    org_url: https://sites.google.com/robotics.snu.ac.kr/fcp/home
+    advisor: Prof. Frank C. Park
+    period: Jul 2025 - Jul 2026
+    title: Impedance Control & Bimanual Manipulation
+    summary: Conducted research on impedance control and bimanual manipulation, including a first-author CoRL 2026 paper.
+    media_size: dense
+    media:
+      - type: image
+        src: /projects/bimanual-manipulation/reference_twist_field.jpg
+        alt: SWIVL reference twist field for bimanual manipulation
+        width: 2487
+        height: 1835
+        caption: SWIVL · Reference twist field
+      - type: image
+        src: /media/research/cdi-overview.webp
+        alt: Constraint-Decomposed Impedance Control from Generative Policy method and real-world manipulation experiments
+        width: 2000
+        height: 1168
+        caption: CoRL 2026 Spotlight · Constraint-Decomposed Impedance Control from Generative Policy
 skills:
   - name: Programming
     items:
       - label: Python
-        level: 5
-      - label: C/C++
-        level: 4
-      - label: MATLAB
-        level: 3
-  - name: Robotics & AI
+      - label: C++
+  - name: Robotics and Learning
     items:
       - label: PyTorch
-        level: 5
-      - label: Isaac Sim/Lab
-        level: 4
-      - label: ROS2
-        level: 4
-      - label: LeRobot
-        level: 3
-      - label: Raisim
-        level: 3
-  - name: Robot Platforms
-    items:
-      - label: Unitree G1/Go2
-        level: 4
-      - label: Franka FR3
-        level: 4
-      - label: Agilex Piper
-        level: 3
-      - label: Fairino FR5
-        level: 3
-      - label: Raibo2
-        level: 3
-
-languages:
-  - name: Korean
-    level: 5
-    label: Native
-  - name: English
-    level: 4
-    label: Fluent
-
+      - label: RaiSim
+      - label: Isaac Lab
+      - label: ROS 2
 awards:
-  - title: Imgwang Scholarship
+  - title: Summa Cum Laude
     awarder: Seoul National University
-    date: "2021-03-01"
-    summary: Full-tuition merit scholarship (2021–present).
-    icon: hero/academic-cap
-  - title: Minister of Startup & Entrepreneurship Award
-    awarder: K-Startup Challenge
-    date: "2023-12-01"
-    summary: National award for AI-generated image detection startup.
-    icon: hero/trophy
-  - title: Grand Award
-    awarder: Ministry of National Defense Startup Competition
-    date: "2023-09-01"
-    summary: Grand prize in national defense startup competition.
-    icon: hero/trophy
-  - title: Best Award
-    awarder: Air Force Startup Competition
-    date: "2023-06-01"
-    summary: Best award in Air Force startup competition.
-    icon: hero/trophy
-  - title: Best Award
-    awarder: Material and Manufacturing Process Contest
-    date: "2024-06-01"
-    summary: Best award in material and manufacturing process design.
-    icon: hero/trophy
+    date: '2026-08-28'
+    summary: Ranked 3rd in the department.

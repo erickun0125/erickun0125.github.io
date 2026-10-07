@@ -1,68 +1,37 @@
 ---
-title: "Auto Balancing Case"
-summary: "Self-balancing wheeled suitcase powered by sim-to-real reinforcement learning."
+title: 'Auto Balancing Case'
+summary: 'A mass-shifting suitcase controlled by a PPO policy, with an Isaac Lab training environment and a sim-to-real hardware bridge.'
 date: 2024-12-01
 featured: true
+draft: true
 ---
 
-*Team Research Project — Seoul National University, 2024*
-*Won Best Award at Material and Manufacturing Process Contest*
+<p class="project-meta">Team project · Seoul National University · 2024</p>
 
-## Overview
+<p class="project-overview">A self-balancing suitcase designed to reduce the effort of handling a tipping case on ramps or uneven surfaces. A PPO policy shifts the upper body's center of mass to counteract tipping, using a controller trained in Isaac Lab and transferred to physical hardware.</p>
 
-Conventional wheeled suitcases tilt forward on carpets, ramps, and uneven terrain, forcing users to apply excessive wrist torque. Instead of fighting gravity with powered wheels or complex stabilization, this project takes a different approach: **shifting the suitcase's center of mass** in real time using a learned RL policy.
+## Approach
 
-The suitcase features a mass-shifting upper body connected to the wheeled base via a single revolute joint. A PPO policy trained in NVIDIA Isaac Lab across 2,048 parallel environments commands the upper body to counteract tilting — deployed directly on real hardware at 50 Hz with no fine-tuning required.
+A movable upper body connects to a four-wheel base through a single actuated hinge joint. The policy uses joint position and velocity, wheel-contact forces, handle force, and action history to command the hinge position. Training runs across 2,048 parallel Isaac Lab environments with randomized external disturbances and observation noise.
 
-![Auto Balancing Case Overview](abc.png)
+<div class="project-gallery">
+  <figure><img src="cad_assembly.png" alt="CAD assembly of the self-balancing suitcase" loading="lazy"><figcaption>Mechanical design with a movable upper body.</figcaption></figure>
+  <figure><img src="hardware0.png" alt="Fabricated Auto Balancing Case hardware" loading="lazy"><figcaption>Fabricated hardware and sensing system.</figcaption></figure>
+</div>
 
-## System Architecture
+## Simulation to Hardware
 
-![System Architecture](diagram_architecture.png)
+A Python sim-to-real bridge reads the hardware sensors, constructs the policy observations, and sends position commands to the actuators at 50 Hz. The demonstrations below show balancing in Isaac Sim and on the physical suitcase.
 
-The end-to-end pipeline: CAD design → URDF → Isaac Lab simulation → PPO training → real hardware deployment. The policy observes 32 dimensions (8-dim observation × 4-step history) including joint state, wheel contact forces, and handle force, and outputs a single joint position target.
+<div class="project-gallery">
+  <figure><img src="demo_simulation.gif" alt="Auto Balancing Case simulation demonstration" loading="lazy"><figcaption>Simulation.</figcaption></figure>
+  <figure><img src="demo_real.gif" alt="Auto Balancing Case real hardware demonstration" loading="lazy"><figcaption>Real hardware.</figcaption></figure>
+</div>
 
-## Hardware Design
+<!-- Add the presentation poster here when provided. slide0.png is retained as a source asset and is not labeled as a poster. -->
 
-![CAD Assembly](cad_assembly.png)
+## Contributions
 
-![Hardware Assembly](hardware0.png)
+My contribution covered the Isaac Lab environment, reinforcement learning policy training, and sim-to-real bridge. This was a team project with toddjrdl (CAD design, hardware integration, and deployment) and juninjae (actuator and sensing systems, integration, and deployment).
 
-- **Base platform**: 4-wheel mobile base (~0.98 kg, 36 cm × 23 cm)
-- **Luggage body**: ~5.6 kg connected via single revolute joint (Y-axis, ±30°)
-- **Actuation**: 4× Dynamixel XL430-W250 (Protocol 2.0)
-- **Sensing**: 5× HX711 load cells (4 wheel + 1 handle), Arduino Mega at 10 Hz
-
-## Real-Time Control
-
-![Control Flow](diagram_control_flow.png)
-
-The 50 Hz control loop executes in a 20 ms budget: read motor state → read sensor state → construct observation → update 4-step history → policy inference (~1 ms) → clip and send motor command. Safety systems include an emergency stop at 0.51 rad tilt and a watchdog timeout.
-
-## Demo
-
-<table width="100%">
-<tr>
-<td width="50%" align="center"><strong>Simulation (Isaac Lab)</strong><br>
-<img src="demo_simulation.gif" alt="Isaac Lab training with 2048 parallel envs" style="width:100%;max-width:480px"/>
-</td>
-<td width="50%" align="center"><strong>Real Hardware</strong><br>
-<img src="demo_real.gif" alt="Real-time balancing on uneven terrain" style="width:100%;max-width:480px"/>
-</td>
-</tr>
-</table>
-
-## Results
-
-- **Zero additional wrist torque** — users reported no extra effort needed on rough terrain
-- **20 ms response time** — reacts to pushes and slope changes within one control cycle
-- **Direct sim-to-real transfer** — no fine-tuning or adaptation on real hardware
-- **Domain randomization**: velocity pushes, external wrenches, mass variation, and observation noise for robust transfer
-
-## Contributors
-
-| Name | Contributions |
-|------|--------------|
-| **@erickun0125** | Isaac Lab environment, Sim2Real bridge, RL agent training |
-| **@toddjrdl** | CAD model design, hardware integration, policy deployment |
-| **@juninjae** | Actuator & sensor system, system integration, real-world deployment |
+[Back to Featured Projects](/#projects)

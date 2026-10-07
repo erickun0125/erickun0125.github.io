@@ -1,0 +1,18 @@
+# Venue and distinction are author-confirmed; title and author order match the supplied manuscript.
+- title: Constraint-Decomposed Impedance Control from Generative Policy for Articulated Object Manipulation
+  authors:
+    - Kyungseo Park
+    - Byeongdo Lim
+    - Jungbin Lim
+    - Minseok Choi
+    - Frank C. Park
+  venue: Conference on Robot Learning (CoRL)
+  year: 2026
+  distinction: Spotlight
+  summary: A generative policy's trajectory ensemble reveals feasible and constrained motion directions, enabling impedance control that stays stiff along feasible motion and compliant along constraints.
+  project_url: https://erickun0125.github.io/constraint-decomposed-impedance/
+  video_url: https://erickun0125.github.io/constraint-decomposed-impedance/#video
+  # Add the final public paper URL when ready for release.
+  paper_url: ''
+  teaser: /media/research/cdi-teaser.mp4
+  poster: /media/research/cdi-teaser.webp

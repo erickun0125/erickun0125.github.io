@@ -13,10 +13,10 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   identity:
     name: "Kyungseo Park"
-    organization: "Seoul National University"
+    organization: "KAIST"
     type: person
-    tagline: "Aspiring Robotics Researcher"
-    description: "Kyungseo Park - Robotics researcher focused on learning-based control and physical intelligence. B.Sc. at Seoul National University."
+    tagline: "Robot Learning, Control, and Planning"
+    description: "Kyungseo Park - M.S. student in Mechanical Engineering at KAIST (RAI Lab), advised by Prof. Jemin Hwangbo. Interested in robot learning, control, and planning for real-world manipulation and locomotion."
     social:
       twitter: ""
 
@@ -84,7 +84,7 @@ hugoblox:
     align: center                       # left | center | right
     # Feature toggles
     search: false
-    theme_toggle: true
+    theme_toggle: false
     theme_picker: false
     language_switcher: false
     # Call-to-action button
@@ -110,7 +110,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   copyright:
     # Copyright notice - supports {year}, {name}, {license} placeholders
-    notice: "© {year} {name}. This work is licensed under {license}"
+    notice: "© {year} Kyungseo Park. This work is licensed under {license}"
     license:
       type: cc                          # cc | custom
       allow_derivatives: false

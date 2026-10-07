@@ -5,7 +5,7 @@ date: 2025-05-01
 featured: true
 ---
 
-*AI Robot Dynamics Engineer Intern — Sequor Robotics, Jun–Oct 2025*
+*AI & Robotics Engineer Intern — Sequor Robotics, Jun 2025 - Oct 2025*
 
 ## Overview
 

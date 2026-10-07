@@ -1,0 +1,2 @@
+{{ $navigation := resources.Get "js/profile-navigation.js" | minify | fingerprint }}
+<script src="{{ $navigation.RelPermalink }}" integrity="{{ $navigation.Data.Integrity }}" defer></script>

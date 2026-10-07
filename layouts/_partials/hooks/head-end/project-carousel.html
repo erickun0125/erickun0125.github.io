@@ -1,0 +1,2 @@
+{{ $carousel := resources.Get "js/project-carousel.js" | minify | fingerprint }}
+<script src="{{ $carousel.RelPermalink }}" integrity="{{ $carousel.Data.Integrity }}" defer></script>

@@ -1,0 +1,18 @@
+{{- with .items -}}
+<div class="experience-media{{ if gt (len .) 1 }} experience-media-pair{{ end }}{{ if eq $.layout "stack" }} experience-media-stack{{ end }}{{ if eq $.size "compact" }} experience-media-compact{{ else if eq $.size "dense" }} experience-media-dense{{ end }}">
+  {{- range . -}}
+    <figure>
+    {{- if eq .type "video" -}}
+    <video autoplay loop controls muted playsinline preload="metadata" aria-label="{{ .alt }}"{{ with .poster }} poster="{{ . | relURL }}"{{ end }}>
+      <source src="{{ .src | relURL }}" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+    {{- else -}}
+    <a class="experience-image-link" href="{{ .src | relURL }}" aria-label="View full-size image: {{ .alt }}">
+      <img src="{{ .src | relURL }}" alt="{{ .alt }}"{{ with .width }} width="{{ . }}"{{ end }}{{ with .height }} height="{{ . }}"{{ end }} loading="lazy" decoding="async">
+    </a>
+    {{- end -}}
+    </figure>
+  {{- end -}}
+</div>
+{{- end -}}

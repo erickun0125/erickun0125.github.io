@@ -1,0 +1,2 @@
+{{ $autoplay := resources.Get "js/video-autoplay.js" | minify | fingerprint }}
+<script src="{{ $autoplay.RelPermalink }}" integrity="{{ $autoplay.Data.Integrity }}" defer></script>

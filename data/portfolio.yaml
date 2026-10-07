@@ -1,0 +1,46 @@
+projects:
+  - name: SWIVL
+    subtitle: Screw-Wrench Informed Impedance Variable Learning
+    images:
+      - src: /projects/bimanual-manipulation/architecture_overview.jpg
+        alt: SWIVL hierarchical control architecture
+        caption: Control architecture
+      - src: /projects/bimanual-manipulation/reference_twist_field.jpg
+        alt: SWIVL reference twist field for bimanual manipulation
+        caption: Reference twist field
+    category: Bimanual manipulation
+    summary: Connects learned motion plans to screw-decomposed impedance control for bimanual articulated-object manipulation. An RL policy uses object screw axes and wrench feedback to adapt compliance and reduce opposing forces between the arms.
+  - name: LIVerse
+    subtitle: Language & Image integrated uniVerse Model
+    images:
+      - src: /projects/vlm-reward-mbrl/architecture.png
+        alt: LIVerse semantic world model architecture
+        caption: Semantic world model
+      - src: /projects/vlm-reward-mbrl/mpc_agent.png
+        alt: LIVerse model predictive controller
+        caption: Model predictive control
+    category: World models and planning
+    summary: Predicts dynamics and vision-language embeddings in a recurrent world model for MPC with text or image goals. Delta-score rewards support sequential subtask planning without training a separate policy for each goal.
+  - name: 'K-Startup Challenge: Detection of Generative Images'
+    category: Computer vision · Aegis AI
+    video:
+      src: /media/aegis-ai/k-startup-presentation.mp4
+      poster: /media/aegis-ai/k-startup-presentation-poster.jpg
+      alt: Aegis AI generative image detection presentation
+    images:
+      - src: /media/aegis-ai/generative-image-detection.png
+        alt: Aegis AI branding and generative image examples
+        caption: Generative image detection
+    summary: Led development of Aegis AI's generative-image detection system for the K-Startup Challenge.
+    meta: 'Technical Leader · Competition prize: US$11,000'
+  - name: Auto Balancing Case
+    subtitle: Learning to balance on real hardware
+    images:
+      - src: /projects/auto-balancing/demo_simulation.gif
+        alt: Auto Balancing Case balancing in Isaac Sim
+        caption: Isaac Sim simulation
+      - src: /projects/auto-balancing/demo_real.gif
+        alt: Auto Balancing Case deployed on real hardware
+        caption: Real hardware
+    category: Sim-to-real reinforcement learning
+    summary: A self-balancing suitcase that shifts its center of mass under PPO control, trained in Isaac Lab and deployed on hardware. My contribution covered the simulation environment, policy training, and sim-to-real bridge.

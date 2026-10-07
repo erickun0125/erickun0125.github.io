@@ -1,26 +1,18 @@
 ---
-title: 'Projects'
+title: Featured Projects
+summary: 'Selected work in robotics, world models, and generative-image detection.'
 date: 2024-05-19
 type: landing
-
 design:
-  # Section spacing
-  spacing: '5rem'
-
-# Page sections
+  spacing: '0'
 sections:
-  - block: collection
+  - block: markdown
     content:
-      title: Selected Projects
-      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
-      filters:
-        folders:
-          - projects
+      title: Featured Projects
+      text: |-
+        Selected work in robotics, world models, and generative-image detection.
+
+        {{< project-cards >}}
     design:
-      view: article-grid
-      fill_image: false
-      columns: 3
-      show_date: false
-      show_read_time: false
-      show_read_more: false
+      columns: '1'
 ---

@@ -5,7 +5,7 @@ date: 2024-06-01
 featured: true
 ---
 
-*Undergraduate Research Intern — RAI Lab, KAIST (Prof. Jemin Hwangbo), Jun–Aug 2024*
+*Undergraduate Research Intern — RAI Lab, KAIST (Prof. Jemin Hwangbo), Jun 2024 - Aug 2024*
 
 ## Overview
 

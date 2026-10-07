@@ -1,0 +1,30 @@
+{{ $projects := .Site.Data.portfolio.projects }}
+<div class="featured-carousel" role="region" aria-roledescription="carousel" aria-label="Featured projects" data-carousel-interval="6000">
+  <div class="carousel-toolbar">
+    <span class="carousel-count">{{ len $projects }} projects</span>
+    <div class="carousel-controls">
+      <button type="button" data-carousel-prev aria-label="Previous project" aria-controls="featured-projects-track">←</button>
+      <button type="button" class="carousel-toggle" data-carousel-toggle aria-label="Pause automatic project scrolling" aria-pressed="false" aria-controls="featured-projects-track">Pause</button>
+      <button type="button" data-carousel-next aria-label="Next project" aria-controls="featured-projects-track">→</button>
+    </div>
+  </div>
+  <div class="featured-grid" id="featured-projects-track" tabindex="0" aria-label="Project cards; use left and right arrow keys to scroll">
+    {{ range $index, $project := $projects }}
+    <article class="featured-card" role="group" aria-roledescription="slide" aria-label="{{ add $index 1 }} of {{ len $projects }}: {{ .name }}">
+      <div class="featured-media featured-image{{ if .video }}{{ if .images }} featured-media-video-pair{{ else }} featured-media-single{{ end }}{{ end }}">
+        {{ with .video }}
+        <video autoplay loop controls muted playsinline preload="metadata" poster="{{ .poster | relURL }}" aria-label="{{ .alt }}">
+          <source src="{{ .src | relURL }}" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        {{ end }}
+        {{ range .images }}<img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async">{{ end }}
+      </div>
+      <p class="card-eyebrow">{{ .category }}</p>
+      <h3>{{ .name }}</h3>
+      <p>{{ .summary }}</p>
+      {{ with .meta }}<p class="featured-meta">{{ . }}</p>{{ end }}
+    </article>
+    {{ end }}
+  </div>
+</div>
