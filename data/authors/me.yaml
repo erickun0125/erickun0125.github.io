@@ -23,6 +23,9 @@ links:
   - icon: brands/github
     url: https://github.com/erickun0125
     label: GitHub
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/kyungseo-eric-park/
+    label: LinkedIn
 interests:
   - Robot Learning
   - Control and Planning
@@ -56,8 +59,8 @@ experience:
     media_size: compact
     media:
       - type: video
-        src: /projects/quadruped-recovery/recovery.mp4
-        poster: /projects/quadruped-recovery/featured.jpg
+        src: /media/railab/quadruped-recovery.mp4
+        poster: /media/railab/quadruped-recovery-poster.jpg
         alt: Raibo2 quadruped recovery demonstration
   - role: Early Crew Member
     org: Rosota
@@ -118,10 +121,10 @@ experience:
     media_size: dense
     media:
       - type: image
-        src: /projects/bimanual-manipulation/reference_twist_field.jpg
+        src: /projects/bimanual-manipulation/reference_twist_field.webp
         alt: SWIVL reference twist field for bimanual manipulation
-        width: 2487
-        height: 1835
+        width: 1600
+        height: 1181
         caption: SWIVL · Reference twist field
       - type: image
         src: /media/research/cdi-overview.webp

@@ -37,7 +37,9 @@ CI (`deploy.yml`) uses Hugo 0.154.5 extended, Go 1.22, Node.js 20. It downloads 
 
 **Profile data** — `data/authors/me.yaml` contains affiliation, education, ordered experience cards, skills, and social links. `data/publications.yaml` contains publications and resource links. `data/portfolio.yaml` contains the four Featured Projects in order: SWIVL, LIVerse, K-Startup Challenge, Auto Balancing Case. Presentation is in `layouts/_partials/profile-home.html` and its card/media partials.
 
-**Media layout** — Experience cards use two media columns on desktop. `media_size: compact` caps the RAI Lab video at 360px; `media_size: dense` caps Rosota, Sequor, and SNU media at 420px. SNU figures use equal 4:3 frames with contained images. Experience media have no visible captions. Featured Projects use square media frames; K-Startup allocates 60% to video and 40% to its smaller image. The carousel advances every six seconds and supports pause, buttons, keyboard arrows, and reduced motion. All MP4 files physically lack audio except K-Startup, whose audio is retained with muted autoplay as the default.
+**Media layout** — Experience cards use two media columns on desktop. `media_size: compact` caps the RAI Lab video at 360px; `media_size: dense` caps Rosota, Sequor, and SNU media at 420px. SNU figures use equal 4:3 frames with contained images. Experience media have no visible captions. Featured Projects use square media frames; K-Startup allocates 60% to video and 40% to its smaller image. The carousel advances every six seconds and supports pause, buttons, keyboard arrows, and reduced motion. Auto Balancing Case uses two short MP4 loops (`type: video` entries in its `images` list) instead of GIFs. All MP4 files physically lack audio except K-Startup, whose audio is retained with muted autoplay as the default.
+
+**Video loading** — Videos use `data-autoplay` and `preload="none"`, never the `autoplay` attribute, so a video downloads nothing until it is scrolled into view. `assets/js/video-autoplay.js` plays each video muted while at least 25% of it is visible, pauses it off-screen, keeps a pause the visitor makes with the controls, and does not autoplay under reduced motion. Encode new web videos as H.264 with faststart, cropped to the subject and about 960px wide, with a real-frame poster.
 
 **Institution links** — Experience headings link to `org_url`. Header lab links use `current_lab_url` and `previous_lab_url`; the current education entry uses `lab` and `lab_url`. Keep official URLs consistent when editing these fields.
 
@@ -45,10 +47,11 @@ CI (`deploy.yml`) uses Hugo 0.154.5 extended, Go 1.22, Node.js 20. It downloads 
 - `custom-styles.html` — Minimal academic profile styling with system sans typography, a serif name, a 1000px outer width, responsive cards, and scoped profile selectors. This is the main styling customization point.
 - `github-button.html` — Loads GitHub buttons script.
 - `profile-navigation.html` — Loads the small navigation enhancement in `assets/js/profile-navigation.js`, providing keyboard control and expanded-state announcements for the theme's mobile checkbox menu.
+- `project-carousel.html` and `video-autoplay.html` — Load `assets/js/project-carousel.js` and `assets/js/video-autoplay.js`.
 
 **Theme** is pulled via Hugo Modules from `github.com/HugoBlox/kit/modules/blox` (defined in `go.mod`). Additional custom layouts go in `layouts/`.
 
-**Static assets**: `assets/media/` for images/icons, `static/uploads/` for downloadable files (resume.pdf).
+**Static assets**: `assets/media/` for images/icons, `static/uploads/` for downloadable files (resume.pdf). The theme builds the favicon from `assets/media/icon.png` (a face crop of Molly) and uses `assets/media/sharing.jpg` (1200×630 card with the CoRL 2026 robot photos) as the `og:image` link preview. Web copies of card media are in `static/media/` and `static/projects/` as WebP images and compressed MP4 files.
 
 ## Content Editing Patterns
 
@@ -61,7 +64,7 @@ CI (`deploy.yml`) uses Hugo 0.154.5 extended, Go 1.22, Node.js 20. It downloads 
 - To change theme appearance (colors, fonts, spacing): edit `config/_default/params.yaml` for HugoBlox settings, or `layouts/_partials/hooks/head-end/custom-styles.html` for CSS overrides
 - Page blocks (collection, markdown) are configured via `type:` and `block:` in content front matter using HugoBlox's block system
 
-The current configuration and refresh history are documented in `docs/PROFILE_REFRESH.md`. SWIVL, LIVerse, and Auto Balancing Case detail pages remain as drafts and must not appear in production; shared images are served from `static/projects/`. Keep original and unused media outside the published source tree. The editable CV source remains in the adjacent `CV` repository; synchronize its verified PDF to `static/uploads/cv_kyungseopark.pdf` and the legacy `static/uploads/CV_KyungseoPark.pdf` URL. For local previews, use `hugo server --disableFastRender --renderToMemory` so stale disk output cannot expose draft pages.
+The current configuration and refresh history are documented in `docs/PROFILE_REFRESH.md`. SWIVL, LIVerse, Auto Balancing Case, Quadruped Recovery, and Sim2Real Pipeline detail pages remain as drafts and must not appear in production; their bundles keep the original media, and shared web copies are served from `static/projects/` and `static/media/`. The RAI Lab recovery policy was evaluated in simulation only, so do not describe it as deployed on hardware. Keep original and unused media outside the published source tree. The editable CV source remains in the adjacent `CV` repository; synchronize its verified PDF to `static/uploads/cv_kyungseopark.pdf` and the legacy `static/uploads/CV_KyungseoPark.pdf` URL. For local previews, use `hugo server --disableFastRender --renderToMemory` so stale disk output cannot expose draft pages.
 
 ## Dependencies
 

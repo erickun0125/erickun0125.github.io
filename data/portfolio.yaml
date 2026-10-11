@@ -5,7 +5,7 @@ projects:
       - src: /projects/bimanual-manipulation/architecture_overview.jpg
         alt: SWIVL hierarchical control architecture
         caption: Control architecture
-      - src: /projects/bimanual-manipulation/reference_twist_field.jpg
+      - src: /projects/bimanual-manipulation/reference_twist_field.webp
         alt: SWIVL reference twist field for bimanual manipulation
         caption: Reference twist field
     category: Bimanual manipulation
@@ -13,10 +13,10 @@ projects:
   - name: LIVerse
     subtitle: Language & Image integrated uniVerse Model
     images:
-      - src: /projects/vlm-reward-mbrl/architecture.png
+      - src: /projects/vlm-reward-mbrl/architecture.webp
         alt: LIVerse semantic world model architecture
         caption: Semantic world model
-      - src: /projects/vlm-reward-mbrl/mpc_agent.png
+      - src: /projects/vlm-reward-mbrl/mpc_agent.webp
         alt: LIVerse model predictive controller
         caption: Model predictive control
     category: World models and planning
@@ -28,7 +28,7 @@ projects:
       poster: /media/aegis-ai/k-startup-presentation-poster.jpg
       alt: Aegis AI generative image detection presentation
     images:
-      - src: /media/aegis-ai/generative-image-detection.png
+      - src: /media/aegis-ai/generative-image-detection.webp
         alt: Aegis AI branding and generative image examples
         caption: Generative image detection
     summary: Led development of Aegis AI's generative-image detection system for the K-Startup Challenge.
@@ -36,10 +36,14 @@ projects:
   - name: Auto Balancing Case
     subtitle: Learning to balance on real hardware
     images:
-      - src: /projects/auto-balancing/demo_simulation.gif
+      - type: video
+        src: /media/auto-balancing/demo-simulation.mp4
+        poster: /media/auto-balancing/demo-simulation-poster.jpg
         alt: Auto Balancing Case balancing in Isaac Sim
         caption: Isaac Sim simulation
-      - src: /projects/auto-balancing/demo_real.gif
+      - type: video
+        src: /media/auto-balancing/demo-real.mp4
+        poster: /media/auto-balancing/demo-real-poster.jpg
         alt: Auto Balancing Case deployed on real hardware
         caption: Real hardware
     category: Sim-to-real reinforcement learning

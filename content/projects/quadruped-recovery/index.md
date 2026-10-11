@@ -3,6 +3,8 @@ title: "Robust Recovery Controller for Quadruped Robot via Deep RL"
 summary: "Recovery policy for Raibo2 quadruped using deep RL with curriculum-based reward design."
 date: 2024-06-01
 featured: true
+# The policy was evaluated in simulation only; revise the sim-to-real claims before publishing.
+draft: true
 ---
 
 *Undergraduate Research Intern — RAI Lab, KAIST (Prof. Jemin Hwangbo), Jun 2024 - Aug 2024*

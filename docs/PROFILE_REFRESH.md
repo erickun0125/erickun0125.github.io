@@ -8,7 +8,9 @@
 - 논문 카드: 제목 → 저자 → CoRL 2026 · Spotlight → Project page · Video → 소개글.
 - 경험: RAI Lab → Rosota → Sequor Robotics → SNU Robotics Lab. 모든 미디어 캡션을 제거했고, Rosota·Sequor 영상과 SNU 이미지 영역은 최대 폭 420px로 정리했다.
 - 프로젝트: SWIVL → LIVerse → K-Startup Challenge → Auto Balancing Case. 수동 스크롤과 6초 간격 자동 이동을 지원한다. K-Startup 소개는 개발을 이끈 역할만 요약하고, 메타 정보에는 Technical Leader와 US$11,000 상금만 표시한다.
-- SWIVL, LIVerse, Auto Balancing Case의 상세 페이지는 `draft: true`로 공개 빌드에서 제외한다. 공통 이미지는 `static/projects/`에서 제공한다.
+- SWIVL, LIVerse, Auto Balancing Case, Quadruped Recovery, Sim2Real Pipeline의 상세 페이지는 `draft: true`로 공개 빌드에서 제외한다. 공통 이미지와 영상은 `static/projects/`와 `static/media/`에서 제공한다.
+- 영상은 화면에 보일 때만 내려받고 재생한다. 화면을 벗어나면 멈추고, 방문자가 직접 멈춘 영상은 다시 자동 재생하지 않으며, reduced motion 설정에서는 자동 재생하지 않는다.
+- favicon은 Molly 얼굴 crop(`assets/media/icon.png`), 링크 공유 미리보기는 CoRL 2026 실험 사진을 넣은 1200×630 카드(`assets/media/sharing.jpg`)를 사용한다.
 - K-Startup 외 모든 MP4는 실제 오디오 트랙이 없다. K-Startup은 오디오를 유지하며 기본 음소거 자동 재생을 사용한다.
 - CV는 기존 LaTeX editor에서 검증한 최신 2페이지 PDF를 두 기존 다운로드 URL에 동일하게 제공한다. Selected Projects·Technical Skills·Research interests 제목·상단 중복 소속은 제거했다.
 - 사용하지 않는 새 미디어 12개는 repository 밖 `media-originals/2026-10-08-release-unused/`에 보관했다. 공개 파일에는 현재 사용하는 crop·압축본을 포함한다.
@@ -28,6 +30,7 @@
 | 현재 소속 | M.S. Student in Mechanical Engineering, RAI Lab, KAIST; Prof. Jemin Hwangbo | 사용자 확인 |
 | 석사 시작 | Fall 2026 | 사용자 확인: 현재 1학기 |
 | 공개 email | erickun0125@kaist.ac.kr | 사용자 지정 |
+| LinkedIn | https://www.linkedin.com/in/kyungseo-eric-park/; 홈 상단 링크와 CV 머리글에 표시 | 사용자 지정 (2026-10-11) |
 | CoRL 논문 | Constraint-Decomposed Impedance Control from Generative Policy for Articulated Object Manipulation | 제공된 camera-ready PDF |
 | 저자 순서 | Kyungseo Park, Byeongdo Lim, Jungbin Lim, Minseok Choi, Frank C. Park | camera-ready PDF와 논문 프로젝트 페이지 |
 | 논문 표기 | CoRL 2026, Spotlight; accepted와 camera-ready 진행 문구는 표시하지 않음 | 사용자 확인 및 최신 표기 요청 |
@@ -179,3 +182,14 @@ CV 복원 후 소스 검증: Leadership & Service의 Aegis AI(US$11,000 competit
 - 원본 파일은 그대로 보관하고 `static/media/rosota/laparoscopic-digital-twin-overview.mp4`와 `laparoscopic-instrument-sensing-focused.mp4` 및 해당 poster를 경험 카드에서 사용한다. 둘 다 30fps H.264, 오디오 트랙 없음, faststart 형식이다. 전체 재생 길이 약 82.6초와 32초를 유지한다.
 - Rosota도 `media_size: dense`를 적용해 미디어 영역 최대 폭을 420px로 줄였다. 데스크톱 두 영상은 각각 약 206×116px로 표시된다. 좁은 화면에서는 기존 반응형 배치를 따른다.
 - 합계 용량은 8,904,156 bytes에서 4,420,843 bytes로 약 50% 줄었다. 장면별 프레임 검토, FFprobe 길이·오디오 검사, Hugo minified build, 브라우저에서 두 영상의 새 파일 로드·자동 재생·기본 음소거를 확인했다.
+
+## 2026-10-08 로딩 성능·공유 이미지·옛 상세 페이지 정리
+
+- 기존에는 페이지를 열면 화면에 보이지 않는 영상까지 9개가 모두 즉시 내려받아 재생되어, 스크롤 없이 10초 안에 약 30MB를 전송했다. 영상은 `autoplay` 대신 `data-autoplay`와 `preload="none"`을 쓰고, `assets/js/video-autoplay.js`가 IntersectionObserver로 화면에 25% 이상 보일 때만 재생한다.
+- Headless Chrome 측정: 데스크톱 첫 로딩 2.55MB(영상은 CoRL teaser 1.17MB만), 390px 모바일 첫 로딩 1.02MB(영상 0MB). 스크롤한 구역의 영상만 재생되고, carousel 밖의 Auto Balancing 영상은 넘겨 보기 전까지 재생하지 않는다. 직접 멈춘 영상은 스크롤 후에도 멈춘 상태로 남고, reduced motion에서는 자동 재생하지 않는 것을 확인했다.
+- RAI Lab recovery 영상은 Ubuntu dock, 창 제목, RaiSim 정보 패널이 보이던 1920×1080 화면 녹화(7.1MB)였다. 30개 프레임에서 로봇의 이동 범위를 확인해 `crop=1120:630:380:280`으로 자르고 960×540 H.264(오디오 없음, faststart)로 `static/media/railab/`에 저장했다(1.7MB). 원본은 `content/projects/quadruped-recovery/`에 있다.
+- Auto Balancing Case의 GIF 두 개(3.9MB)는 프레임 간격 120ms를 유지한 MP4로 바꿔 `static/media/auto-balancing/`에 저장했다(0.55MB). K-Startup 이미지(1.4MB PNG), LIVerse 그림 두 개, SWIVL reference twist field는 WebP로 바꿨다(합계 약 2.9MB → 0.32MB). 교체 전 static 사본 중 GIF·LIVerse PNG·SWIVL JPEG는 동일한 원본이 content bundle에 있어 삭제했고, K-Startup PNG 원본은 repository 밖 `media-originals/2026-10-08-web-optimization/`에 보관했다.
+- `assets/media/icon.png`와 `assets/media/sharing.jpg`를 추가해 HugoBlox 기본 "H" 아이콘이 favicon과 `og:image`로 쓰이던 문제를 고쳤다. 이제 `twitter:card`는 `summary_large_image`로 출력된다.
+- `/projects/quadruped-recovery/`와 `/projects/sim2real-pipeline/`는 홈·CV와 맞지 않는 내용(실기 배포 문구, 근거를 확인하지 않은 성능 수치, 인턴 시작 전 작성일)을 담은 채 sitemap에 공개되어 있어 `draft: true`로 비공개 처리했다. 사용자 확인 결과 RAI Lab recovery policy는 simulation에서만 평가했다.
+- Production build 출력은 85MB에서 28MB로 줄었다. Sitemap에는 두 상세 페이지가 더 이상 포함되지 않으며, 홈·프로젝트·404 페이지의 로컬 참조 80개가 모두 존재하는 것을 확인했다.
+

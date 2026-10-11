@@ -3,6 +3,8 @@ title: "Sim2Real Pipeline for Quadruped & Humanoid Robots"
 summary: "GPU-accelerated RL environments and sim-to-real transfer pipeline for Unitree GO2 and G1 robots."
 date: 2025-05-01
 featured: true
+# Verify the reported metrics and dates before publishing.
+draft: true
 ---
 
 *AI & Robotics Engineer Intern — Sequor Robotics, Jun 2025 - Oct 2025*

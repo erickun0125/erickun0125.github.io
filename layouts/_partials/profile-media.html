@@ -3,7 +3,7 @@
   {{- range . -}}
     <figure>
     {{- if eq .type "video" -}}
-    <video autoplay loop controls muted playsinline preload="metadata" aria-label="{{ .alt }}"{{ with .poster }} poster="{{ . | relURL }}"{{ end }}>
+    <video data-autoplay loop controls muted playsinline preload="none" aria-label="{{ .alt }}"{{ with .poster }} poster="{{ . | relURL }}"{{ end }}>
       <source src="{{ .src | relURL }}" type="video/mp4">
       Your browser does not support video playback.
     </video>
